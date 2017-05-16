@@ -69,7 +69,7 @@ namespace Hearthstone_Deck_Tracker.Windows.MainWindowControls
 		public ICommand ImportFromIdStringCommand => new Command(() => MainWindow.ImportFromIdString());
 		public ICommand ImportFromClipboardCommand => new Command(() => MainWindow.ImportFromClipboard());
 		public ICommand ImportFromLastGameCommand => new Command(() => MainWindow.ImportFromLastGame());
-		public ICommand ExportDeckCommand => new Command(() => MainWindow.ExportDeck(Decks.FirstOrDefault()));
+		public ICommand ExportDeckCommand => new Command(() => MainWindow.ShowExportFlyout(Decks.FirstOrDefault()));
 		public ICommand ExportFromWebCommand => new Command(() => MainWindow.ExportDeckFromWeb());
 		public ICommand SaveToDiskCommand => new Command(() => MainWindow.SaveDecksToDisk(Decks));
 		public ICommand IdsToClipboardCommand => new Command(() => MainWindow.ExportIdsToClipboard(Decks.FirstOrDefault()));
@@ -83,6 +83,7 @@ namespace Hearthstone_Deck_Tracker.Windows.MainWindowControls
 		public ICommand ClaimAccountCommand => new Command(() => MainWindow.StartClaimAccount());
 		public ICommand MyAccountCommand => new Command(() => Helper.TryOpenUrl("https://hsreplay.net/games/mine/?utm_source=hdt&utm_medium=client&utm_campaign=myaccount"));
 		public ICommand DeckHistoryCommand => new Command(() => MainWindow.ShowDeckHistoryFlyout());
+		public ICommand ImportFromDeckString => new Command(() => MainWindow.ImportFromClipboard());
 
 		public IEnumerable<SortFilterDecks.Tag> DeckTags => MainWindow?.TagControlEdit.Tags ?? new ObservableCollection<SortFilterDecks.Tag>();
 		public string SetDeckUrlText => LocUtil.Get(string.IsNullOrEmpty(Decks.FirstOrDefault()?.Url) ? LocLinkNew : LocLink, true);

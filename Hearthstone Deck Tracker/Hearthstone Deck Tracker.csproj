@@ -246,9 +246,15 @@
     <Compile Include="FlyoutControls\DeckHistory\DeckHistoryView.xaml.cs">
       <DependentUpon>DeckHistoryView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="FlyoutControls\DeckExport\DeckExportView.xaml.cs">
+      <DependentUpon>DeckExportView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FlyoutControls\DeckExport\DeckExportViewModel.cs" />
     <Compile Include="Utility\MVVM\ViewModel.cs" />
     <Compile Include="FlyoutControls\DeckScreenshot\DeckScreenshotHelper.cs" />
     <Compile Include="FlyoutControls\DeckScreenshot\DeckScreenshotViewModel.cs" />
+    <Compile Include="Hearthstone\DeckSerializer.cs" />
+    <Compile Include="Utility\VarInt.cs" />
     <Compile Include="Utility\Command.cs" />
     <Compile Include="Controls\DeckPicker\DateConverter.cs" />
     <Compile Include="Controls\DeckPicker\DeckPickerClassItem.xaml.cs">
@@ -423,10 +429,6 @@
     <Compile Include="HsReplay\PackUploader.cs" />
     <Compile Include="HsReplay\UploadMetaDataGenerator.cs" />
     <Compile Include="Importing\Game\ImportOptions\ExistingDeck.cs" />
-    <Compile Include="Exporting\ExportingActions.cs" />
-    <Compile Include="Exporting\ExportingHelper.cs" />
-    <Compile Include="Exporting\ExportingInfo.cs" />
-    <Compile Include="Exporting\HueAndBrightness.cs" />
     <Compile Include="Controls\Information\CardThemesInfo.xaml.cs">
       <DependentUpon>CardThemesInfo.xaml</DependentUpon>
     </Compile>
@@ -535,7 +537,6 @@
     <Compile Include="Utility\LogConfig\LogConfigWatcher.cs" />
     <Compile Include="Utility\Logging\Log.cs" />
     <Compile Include="Utility\Logging\LogType.cs" />
-    <Compile Include="Utility\MouseActions.cs" />
     <Compile Include="FlyoutControls\DeckPanel.xaml.cs">
       <DependentUpon>DeckPanel.xaml</DependentUpon>
     </Compile>
@@ -716,7 +717,6 @@
     <Compile Include="Hearthstone\CardIds.cs" />
     <Compile Include="Enums\CardMark.cs" />
     <Compile Include="Hearthstone\Deck.cs" />
-    <Compile Include="Exporting\DeckExporter.cs" />
     <Compile Include="Importing\DeckImporter.cs" />
     <Compile Include="Enums\GameMode.cs" />
     <Compile Include="Hearthstone\Entities\Entity.cs" />
@@ -872,6 +872,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="FlyoutControls\DeckHistory\DeckHistoryView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FlyoutControls\DeckExport\DeckExportView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
